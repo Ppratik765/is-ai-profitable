@@ -76,10 +76,13 @@ function App() {
           <div className="grid grid-cols-12 gap-4 items-center pb-2 border-b border-white/10 text-[10px] text-slate-500 font-mono tracking-widest uppercase font-bold mt-2">
             <div className="col-span-12 md:col-span-3">Company</div>
             <div className="col-span-12 md:col-span-7 flex items-center">
-              <span className="text-[var(--color-spend-red)] mr-2">• TOTAL SPEND ON AI</span>
+              <span className="text-[var(--color-spend-red)] mr-2">• CAPITAL EXPENDITURE</span>
               <span className="text-[var(--color-revenue-green)]">• TOTAL REVENUE FROM AI</span>
             </div>
             <div className="col-span-12 md:col-span-2 text-right">Cumulative PNL</div>
+          </div>
+          <div className="text-[9px] text-slate-600 font-mono tracking-wider uppercase mt-1 mb-0">
+            Click any row to expand quarterly details & source verification
           </div>
 
           {/* Company List */}

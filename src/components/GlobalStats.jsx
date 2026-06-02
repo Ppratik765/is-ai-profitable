@@ -32,7 +32,7 @@ export function GlobalStats({ spend, rev, spentSinceLoad }) {
             <Odometer value={spend} decimals={1} />
           </div>
           <div className="text-slate-400 text-xs uppercase tracking-widest font-bold">
-            Total Industry Spend
+            Total Industry CapEx
           </div>
         </div>
 
@@ -50,7 +50,7 @@ export function GlobalStats({ spend, rev, spentSinceLoad }) {
             <Odometer value={spentSinceLoadDollars} decimals={0} suffix="" />
           </div>
           <div className="text-slate-400 text-xs uppercase tracking-widest font-bold">
-            $ Spent on AI since page load
+            $ in CapEx since page load
           </div>
         </div>
       </div>
