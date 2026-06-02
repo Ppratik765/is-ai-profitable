@@ -47,9 +47,13 @@ const CompanyRow = memo(({ company, maxScale }) => {
     >
       {/* Column 1: Company Info (3 cols) */}
       <div className="col-span-12 md:col-span-3 flex items-center gap-3">
-        <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg ${getLogoColor(company.id)}`}>
-          {initial}
-        </div>
+        {company.logo ? (
+          <img src={company.logo} alt={company.name} className="w-10 h-10 object-contain drop-shadow-md rounded-md" />
+        ) : (
+          <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg ${getLogoColor(company.id)}`}>
+            {initial}
+          </div>
+        )}
         <div>
           <h3 className="text-white font-bold text-lg leading-tight tracking-wide">{company.name}</h3>
           <p className="text-slate-500 text-xs font-mono mt-0.5">{company.subtext}</p>
@@ -60,37 +64,31 @@ const CompanyRow = memo(({ company, maxScale }) => {
       <div className="col-span-12 md:col-span-7 flex flex-col gap-2.5">
         {/* Spend */}
         <div className="flex items-center gap-4 group/bar">
-          <div className="flex-1 h-3 bg-white/5 rounded-r-full overflow-hidden shadow-inner backdrop-blur-sm border border-white/5 border-l-0">
+          <div className="flex-1 h-3 bg-white/5 rounded-full overflow-hidden shadow-inner backdrop-blur-sm border border-white/5">
             <motion.div 
-              className="h-full rounded-r-full bg-gradient-to-r from-[var(--color-spend-red)]/50 via-[var(--color-spend-red)]/90 to-[var(--color-spend-red)] shadow-[0_0_12px_rgba(255,87,74,0.6)] relative overflow-hidden"
+              className="h-full rounded-full bg-[var(--color-spend-red)] shadow-[0_0_20px_rgba(255,87,74,0.9)] relative overflow-hidden"
               initial={{ width: 0 }}
               animate={{ width: `${spendWidth}%` }}
               transition={{ duration: 0.5 }}
-            >
-              {/* Shimmer effect */}
-              <div className="absolute inset-0 w-[200%] animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-            </motion.div>
+            />
           </div>
           <div className="w-16 text-right transition-transform group-hover/bar:scale-110">
-            <Odometer value={company.currentSpend} decimals={0} className="text-[var(--color-spend-red)] text-sm font-bold drop-shadow-md" />
+            <Odometer value={company.currentSpend} decimals={0} className="text-[var(--color-spend-red)] text-sm font-bold drop-shadow-[0_0_8px_rgba(255,87,74,0.6)]" />
           </div>
         </div>
         
         {/* Revenue */}
         <div className="flex items-center gap-4 group/bar">
-          <div className="flex-1 h-3 bg-white/5 rounded-r-full overflow-hidden shadow-inner backdrop-blur-sm border border-white/5 border-l-0">
+          <div className="flex-1 h-3 bg-white/5 rounded-full overflow-hidden shadow-inner backdrop-blur-sm border border-white/5">
             <motion.div 
-              className="h-full rounded-r-full bg-gradient-to-r from-[var(--color-revenue-green)]/50 via-[var(--color-revenue-green)]/90 to-[var(--color-revenue-green)] shadow-[0_0_12px_rgba(46,204,113,0.6)] relative overflow-hidden"
+              className="h-full rounded-full bg-[var(--color-revenue-green)] shadow-[0_0_20px_rgba(46,204,113,0.9)] relative overflow-hidden"
               initial={{ width: 0 }}
               animate={{ width: `${revWidth}%` }}
               transition={{ duration: 0.5 }}
-            >
-              {/* Shimmer effect */}
-              <div className="absolute inset-0 w-[200%] animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-            </motion.div>
+            />
           </div>
           <div className="w-16 text-right transition-transform group-hover/bar:scale-110">
-            <Odometer value={company.currentRev} decimals={0} className="text-[var(--color-revenue-green)] text-sm font-bold drop-shadow-md" />
+            <Odometer value={company.currentRev} decimals={0} className="text-[var(--color-revenue-green)] text-sm font-bold drop-shadow-[0_0_8px_rgba(46,204,113,0.6)]" />
           </div>
         </div>
       </div>
