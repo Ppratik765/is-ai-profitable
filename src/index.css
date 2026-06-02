@@ -1,1 +1,63 @@
 @import "tailwindcss";
+
+@theme {
+  --color-imperial-blue: #040d1a;
+  --color-french-blue: #0b192c;
+  --color-steel-azure: #00509d;
+  --color-school-bus-yellow: #fdc500;
+  --color-pure-gold: #ffd500;
+  --color-spend-red: #ff574a;
+  --color-revenue-green: #2ecc71;
+
+  --animate-starlight: starlight 15s linear infinite;
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+  --animate-shimmer: shimmer 2s linear infinite;
+
+  @keyframes shimmer {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(50%);
+    }
+  }
+
+  @keyframes starlight {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-1000px);
+    }
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 10px -2px var(--color-steel-azure);
+    }
+    to {
+      box-shadow: 0 0 20px 2px var(--color-steel-azure);
+    }
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+body {
+  @apply bg-gradient-to-br from-imperial-blue to-french-blue text-slate-100 min-h-screen overflow-x-hidden;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Hide scrollbar for a cleaner look but keep functionality */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-imperial-blue;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-steel-azure rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-french-blue;
+}
