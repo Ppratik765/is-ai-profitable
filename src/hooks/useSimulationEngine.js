@@ -12,7 +12,7 @@ export const INITIAL_COMPANIES = [
     rev: 42,
     pnl: -143,
     burn: 12,
-    reportUrl: '/reports/amazon-q1-2026.pdf',
+    reportUrl: 'https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-First-Quarter-Results/default.aspx',
     quarters: [
       { label: 'Q2 2025', spend: 58, rev: 4.0 },
       { label: 'Q3 2025', spend: 68, rev: 4.8 },
@@ -29,7 +29,7 @@ export const INITIAL_COMPANIES = [
     rev: 38,
     pnl: -122,
     burn: 11,
-    reportUrl: '/reports/alphabet-q1-2026.pdf',
+    reportUrl: 'https://s206.q4cdn.com/479360582/files/doc_financials/2026/q1/2026q1-alphabet-earnings-release.pdf',
     quarters: [
       { label: 'Q2 2025', spend: 52, rev: 84.7 },
       { label: 'Q3 2025', spend: 60, rev: 88.3 },
@@ -46,7 +46,7 @@ export const INITIAL_COMPANIES = [
     rev: 48,
     pnl: -127,
     burn: 10,
-    reportUrl: '/reports/microsoft-q1-2026.pdf',
+    reportUrl: 'https://www.microsoft.com/en-us/investor/earnings/fy-2026-q1/performance',
     quarters: [
       { label: 'Q4 FY25', spend: 48, rev: 64.7 },
       { label: 'Q1 FY26', spend: 55, rev: 69.6 },
@@ -63,7 +63,7 @@ export const INITIAL_COMPANIES = [
     rev: 12,
     pnl: -128,
     burn: 9.5,
-    reportUrl: '/reports/meta-q1-2026.pdf',
+    reportUrl: 'https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-First-Quarter-2026-Results/default.aspx',
     quarters: [
       { label: 'Q2 2025', spend: 40, rev: 0.5 },
       { label: 'Q3 2025', spend: 48, rev: 0.6 },
@@ -97,7 +97,7 @@ export const INITIAL_COMPANIES = [
     rev: 18,
     pnl: -27,
     burn: 1.6,
-    reportUrl: '/reports/oracle-q1-2026.pdf',
+    reportUrl: 'https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Fiscal-Year-2026-Third-Quarter-Financial-Results/default.aspx',
     quarters: [
       { label: 'Q2 2025', spend: 10, rev: 3.5 },
       { label: 'Q3 2025', spend: 12, rev: 4.0 },
@@ -114,7 +114,7 @@ export const INITIAL_COMPANIES = [
     rev: 26,
     pnl: -16,
     burn: 1.1,
-    reportUrl: '/reports/openai-q1-2026.pdf',
+    reportUrl: 'https://www.microsoft.com/en-us/investor/earnings/fy-2026-q1/performance',
     quarters: [
       { label: 'Q2 2025', spend: 10, rev: 4.5, est: true },
       { label: 'Q3 2025', spend: 12, rev: 5.8, est: true },
@@ -131,7 +131,7 @@ export const INITIAL_COMPANIES = [
     rev: 14,
     pnl: -14,
     burn: 1.1,
-    reportUrl: '/reports/anthropic-q1-2026.pdf',
+    reportUrl: 'https://www.forbesafrica.com/current-affairs/2026/06/02/anthropic-confidentially-files-for-its-highly-anticipated-ipo',
     quarters: [
       { label: 'Q2 2025', spend: 5.5, rev: 1.5, est: true },
       { label: 'Q3 2025', spend: 7, rev: 2.0, est: true },
@@ -148,7 +148,7 @@ export const INITIAL_COMPANIES = [
     rev: 1.2,
     pnl: -16.8,
     burn: 0.8,
-    reportUrl: '/reports/xai-q1-2026.pdf',
+    reportUrl: null,
     quarters: [
       { label: 'Q2 2025', spend: 3, rev: 0.05, est: true },
       { label: 'Q3 2025', spend: 4.5, rev: 0.1, est: true },
@@ -165,7 +165,7 @@ export const INITIAL_COMPANIES = [
     rev: 0.4,
     pnl: -1.1,
     burn: 0.02,
-    reportUrl: '/reports/mistral-q1-2026.pdf',
+    reportUrl: null,
     quarters: [
       { label: 'Q2 2025', spend: 0.15, rev: 0.05, est: true },
       { label: 'Q3 2025', spend: 0.2, rev: 0.07, est: true },
@@ -182,7 +182,7 @@ export const INITIAL_COMPANIES = [
     rev: 0.3,
     pnl: -0.6,
     burn: 0.01,
-    reportUrl: '/reports/cohere-q1-2026.pdf',
+    reportUrl: null,
     quarters: [
       { label: 'Q2 2025', spend: 0.12, rev: 0.06, est: true },
       { label: 'Q3 2025', spend: 0.15, rev: 0.08, est: true },
@@ -199,7 +199,7 @@ export const INITIAL_COMPANIES = [
     rev: 0.2,
     pnl: -0.4,
     burn: 0.01,
-    reportUrl: '/reports/deepseek-q1-2026.pdf',
+    reportUrl: null,
     quarters: [
       { label: 'Q2 2025', spend: 0.04, rev: 0.01, est: true },
       { label: 'Q3 2025', spend: 0.06, rev: 0.015, est: true },

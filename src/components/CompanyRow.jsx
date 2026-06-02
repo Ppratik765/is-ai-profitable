@@ -297,20 +297,31 @@ const CompanyRow = memo(({ company, maxScale }) => {
                     </div>
 
                     {/* Verify Source Button */}
-                    <a
-                      href={company.reportUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="flex items-center justify-center gap-2 px-5 py-3 rounded-lg
-                        bg-[#00509d] hover:bg-[#003f7f] text-white font-semibold text-sm
-                        transition-all duration-200 shadow-lg shadow-[#00509d]/20
-                        hover:shadow-[#00509d]/40 hover:scale-[1.02] active:scale-[0.98]
-                        border border-[#00509d]/50"
-                    >
-                      Verify Source Data (PDF)
-                      <ExternalLinkIcon />
-                    </a>
+                    {company.reportUrl ? (
+                      <a
+                        href={company.reportUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex items-center justify-center gap-2 px-5 py-3 rounded-lg
+                          bg-[#00509d] hover:bg-[#003f7f] text-white font-semibold text-sm
+                          transition-all duration-200 shadow-lg shadow-[#00509d]/20
+                          hover:shadow-[#00509d]/40 hover:scale-[1.02] active:scale-[0.98]
+                          border border-[#00509d]/50"
+                      >
+                        Verify Source Data
+                        {company.reportUrl.endsWith('.pdf') ? ' (PDF)' : ''}
+                        <ExternalLinkIcon />
+                      </a>
+                    ) : (
+                      <div
+                        className="flex items-center justify-center gap-2 px-5 py-3 rounded-lg
+                          bg-slate-800/50 text-slate-500 font-semibold text-sm
+                          border border-white/5 cursor-not-allowed opacity-80"
+                      >
+                        Private Entity - Data Estimated
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
