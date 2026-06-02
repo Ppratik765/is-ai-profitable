@@ -10,7 +10,7 @@ export function GlobalStats({ spend, rev, spentSinceLoad }) {
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8">
         <div className="max-w-2xl">
           <h1 className="text-6xl md:text-8xl font-black text-white leading-tight mb-6 uppercase tracking-tighter">
-            Is AI<br />Profitable<br />Yet ?
+            Is AI<br />Profitable ?
           </h1>
           <p className="text-slate-400 uppercase tracking-widest text-sm md:text-base font-semibold">
             Tracking the spend and revenue of frontier AI companies (May 2026).

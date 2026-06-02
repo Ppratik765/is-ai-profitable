@@ -64,10 +64,12 @@ function App() {
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-[var(--color-revenue-green)]/5 blur-[120px]" />
       </div>
 
-      <div className="container mx-auto px-6 pt-0 pb-12 relative z-10 max-w-7xl">
-        <GlobalStats spend={globalSpend} rev={globalRev} spentSinceLoad={globalSpentSinceLoad} />
+      <div className="container mx-auto px-6 relative z-10 max-w-7xl">
+        <div className="min-h-[94svh] flex flex-col justify-center pt-14 pb-12">
+          <GlobalStats spend={globalSpend} rev={globalRev} spentSinceLoad={globalSpentSinceLoad} />
+        </div>
         
-        <div className="mt-4">
+        <div className="mt-4" id="data-section">
           <SortControls sortBy={sortBy} setSortBy={setSortBy} />
 
           {/* List Headers */}
