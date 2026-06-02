@@ -168,7 +168,9 @@ const CompanyRow = memo(({ company, maxScale }) => {
           )}
           <div className="flex-1 min-w-0">
             <h3 className="text-white font-bold text-lg leading-tight tracking-wide">{company.name}</h3>
-            <p className="text-slate-500 text-xs font-mono mt-0.5 truncate">{company.subtext}</p>
+            <p className="text-slate-500 text-xs font-mono mt-0.5 line-clamp-2 break-words max-w-[250px]">
+              {company.baselineYear ? `Full AI Capital Expenditure est. since ${company.baselineYear}` : company.subtext}
+            </p>
           </div>
           {/* Chevron — visible on mobile next to company name */}
           <div className="md:hidden flex items-center">

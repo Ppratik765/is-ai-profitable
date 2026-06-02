@@ -13,7 +13,7 @@ export function GlobalStats({ spend, rev, spentSinceLoad }) {
             Is AI<br />Profitable ?
           </h1>
           <p className="text-slate-400 uppercase tracking-widest text-sm md:text-base font-semibold">
-            Tracking the spend and revenue of frontier AI companies (May 2026).
+            Tracking the spend and revenue of frontier AI companies (June 2026).
           </p>
         </div>
         <div className="mt-8 md:mt-0 text-left md:text-right">
