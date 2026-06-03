@@ -258,14 +258,27 @@ const CompanyRow = memo(({ company, maxScale }) => {
             transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
             className="overflow-hidden"
           >
-            <div className="pb-6 pt-2 px-2 md:px-4">
+            <div className="pb-6 pt-4 px-2 md:px-4">
               <div className="bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-xl p-4 md:p-6">
                 <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
                   {/* Left: Quarterly Performance */}
                   <div className="flex-1 w-full md:w-2/3">
-                    <h4 className="text-xs text-slate-400 uppercase tracking-widest font-bold mb-4 flex items-center gap-2">
+                    <h4 className="text-xs text-slate-400 uppercase tracking-widest font-bold mb-4 flex items-center gap-2 group/tooltip relative w-max">
                       <span className="inline-block w-1.5 h-1.5 rounded-full bg-[var(--color-steel-azure)]" />
-                      Trailing 4 Quarters
+                      Estimated AI-Segment Trailing Run-Rate
+                      
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-slate-500 cursor-help hover:text-white transition-colors">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 16v-4"></path>
+                        <path d="M12 8h.01"></path>
+                      </svg>
+                      
+                      {/* Interactive Tooltip */}
+                      <div className="absolute left-6 top-6 w-72 p-3 bg-[#001538]/95 border border-white/10 rounded-lg shadow-2xl shadow-black/50 opacity-0 invisible group-hover/tooltip:opacity-100 group-hover/tooltip:visible transition-all duration-300 z-20 backdrop-blur-md translate-y-2 group-hover/tooltip:translate-y-0 pointer-events-none">
+                        <p className="text-[10px] text-slate-300 leading-relaxed normal-case tracking-normal font-normal">
+                          <span className="font-bold text-[#fdc500]">Disclaimer:</span> Exact AI-specific hardware expenditure is not legally mandated as a standalone line item in SEC filings (10-Q/10-K). Quarterly figures displayed below are estimated AI-segment run-rates derived from total reported Capital Expenditures and isolated Cloud/AI growth metrics.
+                        </p>
+                      </div>
                     </h4>
                     <QuarterlyChart quarters={company.quarters} currentSpend={company.currentSpend} currentRev={company.currentRev} />
 
