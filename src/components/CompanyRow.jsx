@@ -47,15 +47,23 @@ function ExternalLinkIcon() {
 }
 
 // Quarterly mini-bar chart for the expanded panel
-function QuarterlyChart({ quarters }) {
+function QuarterlyChart({ quarters, currentSpend, currentRev }) {
   if (!quarters || quarters.length === 0) return null;
 
+  // Map quarters to absolute values
+  const computedQuarters = quarters.map(q => ({
+    ...q,
+    label: q.name || q.label,
+    spend: q.spend !== undefined ? q.spend : (q.spendPct * currentSpend),
+    rev: q.rev !== undefined ? q.rev : (q.revPct * currentRev),
+  }));
+
   // Find max value across all quarters for scaling
-  const maxVal = Math.max(...quarters.flatMap(q => [q.spend, q.rev]));
+  const maxVal = Math.max(...computedQuarters.flatMap(q => [q.spend, q.rev]));
 
   return (
     <div className="grid grid-cols-4 gap-3">
-      {quarters.map((q, i) => {
+      {computedQuarters.map((q, i) => {
         const spendHeight = maxVal > 0 ? (q.spend / maxVal) * 100 : 0;
         const revHeight = maxVal > 0 ? (q.rev / maxVal) * 100 : 0;
 
@@ -259,7 +267,7 @@ const CompanyRow = memo(({ company, maxScale }) => {
                       <span className="inline-block w-1.5 h-1.5 rounded-full bg-[var(--color-steel-azure)]" />
                       Trailing 4 Quarters
                     </h4>
-                    <QuarterlyChart quarters={company.quarters} />
+                    <QuarterlyChart quarters={company.quarters} currentSpend={company.currentSpend} currentRev={company.currentRev} />
 
                     {/* Legend */}
                     <div className="flex items-center gap-4 mt-4 text-[10px] text-slate-500 font-mono uppercase tracking-widest">

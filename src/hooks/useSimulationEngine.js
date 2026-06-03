@@ -14,10 +14,10 @@ export const INITIAL_COMPANIES = [
     burn: 12,
     reportUrl: 'https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-First-Quarter-Results/default.aspx',
     quarters: [
-      { label: 'Q2 2025', spend: 58, rev: 4.0 },
-      { label: 'Q3 2025', spend: 68, rev: 4.8 },
-      { label: 'Q4 2025', spend: 78, rev: 5.5 },
-      { label: 'Q1 2026', spend: 91, rev: 7.7 },
+      { name: 'Q3 2025', spendPct: 0.065, revPct: 0.080 },
+      { name: 'Q4 2025', spendPct: 0.075, revPct: 0.092 },
+      { name: 'Q1 2026', spendPct: 0.088, revPct: 0.105 },
+      { name: 'Q2 2026', spendPct: 0.102, revPct: 0.118 }
     ],
   },
   {
@@ -31,10 +31,10 @@ export const INITIAL_COMPANIES = [
     burn: 11,
     reportUrl: 'https://s206.q4cdn.com/479360582/files/doc_financials/2026/q1/2026q1-alphabet-earnings-release.pdf',
     quarters: [
-      { label: 'Q2 2025', spend: 52, rev: 84.7 },
-      { label: 'Q3 2025', spend: 60, rev: 88.3 },
-      { label: 'Q4 2025', spend: 72, rev: 96.5 },
-      { label: 'Q1 2026', spend: 86, rev: 109.9 },
+      { name: 'Q3 2025', spendPct: 0.055, revPct: 0.075 },
+      { name: 'Q4 2025', spendPct: 0.071, revPct: 0.088 },
+      { name: 'Q1 2026', spendPct: 0.098, revPct: 0.102 },
+      { name: 'Q2 2026', spendPct: 0.122, revPct: 0.110 }
     ],
   },
   {
@@ -48,10 +48,10 @@ export const INITIAL_COMPANIES = [
     burn: 10,
     reportUrl: 'https://www.microsoft.com/en-us/investor/earnings/fy-2026-q1/performance',
     quarters: [
-      { label: 'Q4 FY25', spend: 48, rev: 64.7 },
-      { label: 'Q1 FY26', spend: 55, rev: 69.6 },
-      { label: 'Q2 FY26', spend: 65, rev: 72.1 },
-      { label: 'Q3 FY26', spend: 82, rev: 77.7 },
+      { name: 'Q3 2025', spendPct: 0.062, revPct: 0.081 },
+      { name: 'Q4 2025', spendPct: 0.078, revPct: 0.095 },
+      { name: 'Q1 2026', spendPct: 0.091, revPct: 0.104 },
+      { name: 'Q2 2026', spendPct: 0.115, revPct: 0.112 }
     ],
   },
   {
@@ -65,10 +65,10 @@ export const INITIAL_COMPANIES = [
     burn: 9.5,
     reportUrl: 'https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-First-Quarter-2026-Results/default.aspx',
     quarters: [
-      { label: 'Q2 2025', spend: 40, rev: 0.5 },
-      { label: 'Q3 2025', spend: 48, rev: 0.6 },
-      { label: 'Q4 2025', spend: 56, rev: 0.8 },
-      { label: 'Q1 2026', spend: 71, rev: 1.1 },
+      { name: 'Q3 2025', spendPct: 0.060, revPct: 0.050 },
+      { name: 'Q4 2025', spendPct: 0.085, revPct: 0.065 },
+      { name: 'Q1 2026', spendPct: 0.105, revPct: 0.075 },
+      { name: 'Q2 2026', spendPct: 0.130, revPct: 0.080 }
     ],
   },
   {
@@ -82,10 +82,10 @@ export const INITIAL_COMPANIES = [
     burn: -20,
     reportUrl: 'https://nvidianews.nvidia.com/_gallery/download_pdf/6a0e17dc3d633295d45282e6/',
     quarters: [
-      { label: 'Q2 FY26', spend: 10, rev: 30.0 },
-      { label: 'Q3 FY26', spend: 12, rev: 35.1 },
-      { label: 'Q4 FY26', spend: 15, rev: 39.3 },
-      { label: 'Q1 FY27', spend: 18, rev: 81.6 },
+      { name: 'Q3 FY26', spendPct: 0.085, revPct: 0.082 },
+      { name: 'Q4 FY26', spendPct: 0.092, revPct: 0.105 },
+      { name: 'Q1 FY27', spendPct: 0.105, revPct: 0.128 },
+      { name: 'Q2 FY27', spendPct: 0.112, revPct: 0.145 }
     ],
   },
   {
@@ -116,10 +116,10 @@ export const INITIAL_COMPANIES = [
     burn: 1.1,
     reportUrl: 'https://www.microsoft.com/en-us/investor/earnings/fy-2026-q1/performance',
     quarters: [
-      { label: 'Q2 2025', spend: 10, rev: 4.5, est: true },
-      { label: 'Q3 2025', spend: 12, rev: 5.8, est: true },
-      { label: 'Q4 2025', spend: 15, rev: 7.5, est: true },
-      { label: 'Q1 2026', spend: 18, rev: 10.2, est: true },
+      { name: 'Q3 2025', spendPct: 0.080, revPct: 0.060, est: true },
+      { name: 'Q4 2025', spendPct: 0.120, revPct: 0.090, est: true },
+      { name: 'Q1 2026', spendPct: 0.160, revPct: 0.140, est: true },
+      { name: 'Q2 2026', spendPct: 0.190, revPct: 0.210, est: true }
     ],
   },
   {
@@ -133,10 +133,10 @@ export const INITIAL_COMPANIES = [
     burn: 1.1,
     reportUrl: 'https://www.forbesafrica.com/current-affairs/2026/06/02/anthropic-confidentially-files-for-its-highly-anticipated-ipo',
     quarters: [
-      { label: 'Q2 2025', spend: 5.5, rev: 1.5, est: true },
-      { label: 'Q3 2025', spend: 7, rev: 2.0, est: true },
-      { label: 'Q4 2025', spend: 9, rev: 3.5, est: true },
-      { label: 'Q1 2026', spend: 11.5, rev: 4.75, est: true },
+      { name: 'Q3 2025', spendPct: 0.080, revPct: 0.060, est: true },
+      { name: 'Q4 2025', spendPct: 0.120, revPct: 0.090, est: true },
+      { name: 'Q1 2026', spendPct: 0.160, revPct: 0.140, est: true },
+      { name: 'Q2 2026', spendPct: 0.190, revPct: 0.210, est: true }
     ],
   },
   {
@@ -150,10 +150,10 @@ export const INITIAL_COMPANIES = [
     burn: 0.8,
     reportUrl: null,
     quarters: [
-      { label: 'Q2 2025', spend: 3, rev: 0.05, est: true },
-      { label: 'Q3 2025', spend: 4.5, rev: 0.1, est: true },
-      { label: 'Q4 2025', spend: 5.5, rev: 0.2, est: true },
-      { label: 'Q1 2026', spend: 7, rev: 0.45, est: true },
+      { name: 'Q3 2025', spendPct: 0.080, revPct: 0.060, est: true },
+      { name: 'Q4 2025', spendPct: 0.120, revPct: 0.090, est: true },
+      { name: 'Q1 2026', spendPct: 0.160, revPct: 0.140, est: true },
+      { name: 'Q2 2026', spendPct: 0.190, revPct: 0.210, est: true }
     ],
   },
   {
@@ -167,10 +167,10 @@ export const INITIAL_COMPANIES = [
     burn: 0.02,
     reportUrl: null,
     quarters: [
-      { label: 'Q2 2025', spend: 0.15, rev: 0.05, est: true },
-      { label: 'Q3 2025', spend: 0.2, rev: 0.07, est: true },
-      { label: 'Q4 2025', spend: 0.25, rev: 0.1, est: true },
-      { label: 'Q1 2026', spend: 0.4, rev: 0.18, est: true },
+      { name: 'Q3 2025', spendPct: 0.080, revPct: 0.060, est: true },
+      { name: 'Q4 2025', spendPct: 0.120, revPct: 0.090, est: true },
+      { name: 'Q1 2026', spendPct: 0.160, revPct: 0.140, est: true },
+      { name: 'Q2 2026', spendPct: 0.190, revPct: 0.210, est: true }
     ],
   },
   {
@@ -184,10 +184,10 @@ export const INITIAL_COMPANIES = [
     burn: 0.01,
     reportUrl: null,
     quarters: [
-      { label: 'Q2 2025', spend: 0.12, rev: 0.06, est: true },
-      { label: 'Q3 2025', spend: 0.15, rev: 0.08, est: true },
-      { label: 'Q4 2025', spend: 0.18, rev: 0.1, est: true },
-      { label: 'Q1 2026', spend: 0.25, rev: 0.16, est: true },
+      { name: 'Q3 2025', spendPct: 0.080, revPct: 0.060, est: true },
+      { name: 'Q4 2025', spendPct: 0.120, revPct: 0.090, est: true },
+      { name: 'Q1 2026', spendPct: 0.160, revPct: 0.140, est: true },
+      { name: 'Q2 2026', spendPct: 0.190, revPct: 0.210, est: true }
     ],
   },
   {
@@ -201,10 +201,10 @@ export const INITIAL_COMPANIES = [
     burn: 0.01,
     reportUrl: null,
     quarters: [
-      { label: 'Q2 2025', spend: 0.04, rev: 0.01, est: true },
-      { label: 'Q3 2025', spend: 0.06, rev: 0.015, est: true },
-      { label: 'Q4 2025', spend: 0.08, rev: 0.025, est: true },
-      { label: 'Q1 2026', spend: 0.12, rev: 0.05, est: true },
+      { name: 'Q3 2025', spendPct: 0.080, revPct: 0.060, est: true },
+      { name: 'Q4 2025', spendPct: 0.120, revPct: 0.090, est: true },
+      { name: 'Q1 2026', spendPct: 0.160, revPct: 0.140, est: true },
+      { name: 'Q2 2026', spendPct: 0.190, revPct: 0.210, est: true }
     ],
   },
 ];
