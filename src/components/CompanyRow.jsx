@@ -146,6 +146,8 @@ const CompanyRow = memo(({ company, maxScale }) => {
     return colors[id] || 'bg-slate-600';
   };
 
+  const isPublic = ['alphabet', 'microsoft', 'meta', 'amazon', 'oracle', 'nvidia'].includes(company.id);
+
   return (
     <div className="border-b border-white/5">
       {/* Row Header — always visible, clickable */}
@@ -155,7 +157,7 @@ const CompanyRow = memo(({ company, maxScale }) => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
         onClick={() => setIsExpanded(prev => !prev)}
-        className="grid grid-cols-12 gap-4 items-center py-5 hover:bg-white/[0.03] transition-colors group cursor-pointer"
+        className="grid grid-cols-12 gap-2 md:gap-4 items-center py-4 md:py-5 hover:bg-white/[0.03] transition-colors group cursor-pointer"
       >
         {/* Column 1: Company Info (3 cols) */}
         <div className="col-span-12 md:col-span-3 flex items-center gap-3">
@@ -167,7 +169,12 @@ const CompanyRow = memo(({ company, maxScale }) => {
             </div>
           )}
           <div className="flex-1 min-w-0">
-            <h3 className="text-white font-bold text-lg leading-tight tracking-wide">{company.name}</h3>
+            <h3 className="text-white font-bold text-base md:text-lg leading-tight tracking-wide flex items-center">
+              <span className="truncate">{company.name}</span>
+              <span className={`shrink-0 hidden min-[360px]:inline-flex ml-2 items-center px-1.5 py-0.5 rounded text-[9px] font-bold tracking-wider uppercase border ${isPublic ? 'border-[#00509d] text-[#00509d] bg-[#00509d]/10' : 'border-slate-500 text-slate-400 bg-slate-500/10'}`}>
+                {isPublic ? 'SEC Verified' : 'Analyst Estimate'}
+              </span>
+            </h3>
             <p className="text-slate-500 text-xs font-mono mt-0.5 line-clamp-2 break-words max-w-[250px]">
               {company.baselineYear ? `Full AI Capital Expenditure est. since ${company.baselineYear}` : company.subtext}
             </p>
@@ -179,7 +186,7 @@ const CompanyRow = memo(({ company, maxScale }) => {
         </div>
 
         {/* Column 2: Data Bars (7 cols) */}
-        <div className="col-span-12 md:col-span-7 flex flex-col gap-2.5">
+        <div className="col-span-12 md:col-span-7 flex flex-col gap-2 md:gap-3">
           {/* CapEx */}
           <div className="flex items-center gap-4 group/bar">
             <div className="flex-1 h-3 bg-white/5 rounded-full overflow-hidden shadow-inner backdrop-blur-sm border border-white/5">
@@ -212,15 +219,15 @@ const CompanyRow = memo(({ company, maxScale }) => {
         </div>
 
         {/* Column 3: PnL + Chevron (2 cols) */}
-        <div className="col-span-12 md:col-span-2 flex items-center justify-end gap-3">
-          <div className="text-right">
-            <div className={`text-2xl font-bold tracking-tight mb-1 ${pnlColorClass}`}>
+        <div className="col-span-12 md:col-span-2 flex items-center justify-end gap-3 mt-1 md:mt-0">
+          <div className="text-right space-y-0.5 md:space-y-0">
+            <div className={`text-xl md:text-2xl font-bold tracking-tight ${pnlColorClass} flex justify-end items-center`}>
               {isPositivePnl ? '+' : ''}
               <Odometer value={company.currentPnl} decimals={1} className={pnlColorClass} />
             </div>
-            <div className="text-[10px] text-slate-500 font-mono tracking-tighter uppercase leading-tight">
-              <span className={isPositivePnl ? 'text-[#ffd500]' : ''}>{sinceLoadText}</span><br/>
-              <span className={pnlColorClass}>
+            <div className="text-[9px] md:text-[10px] text-slate-500 font-mono tracking-tighter uppercase leading-tight">
+              <span className={isPositivePnl ? 'text-[#ffd500]' : ''}>{sinceLoadText}</span><br className="hidden md:block"/>
+              <span className={`ml-1 md:ml-0 ${pnlColorClass}`}>
                 {pnlSinceLoadDollars < 0 ? '-' : '+'}${Math.abs(pnlSinceLoadDollars).toLocaleString('en-US', {maximumFractionDigits: 0})}
               </span>
             </div>
@@ -244,7 +251,7 @@ const CompanyRow = memo(({ company, maxScale }) => {
             className="overflow-hidden"
           >
             <div className="pb-6 pt-2 px-2 md:px-4">
-              <div className="bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-xl p-5 md:p-6">
+              <div className="bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-xl p-4 md:p-6">
                 <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
                   {/* Left: Quarterly Performance */}
                   <div className="flex-1 w-full md:w-2/3">

@@ -12,12 +12,12 @@ const SORT_OPTIONS = [
 
 export function SortControls({ sortBy, setSortBy }) {
   return (
-    <div className="flex flex-wrap items-center gap-0 mb-4 z-10 relative border border-white/10 rounded-sm w-fit overflow-hidden">
+    <div className="flex flex-row overflow-x-auto md:flex-wrap items-center whitespace-nowrap gap-2 md:gap-0 pb-2 md:pb-0 mb-4 z-10 relative w-full md:w-fit md:border md:border-white/10 md:rounded-sm md:overflow-hidden scrollbar-none">
       {SORT_OPTIONS.map((option, index) => (
         <button
           key={option.value}
           onClick={() => setSortBy(option.value)}
-          className={`px-4 py-1.5 text-xs font-semibold tracking-wider transition-colors border-r border-white/10 last:border-r-0 ${
+          className={`shrink-0 px-4 py-1.5 text-xs font-semibold tracking-wider transition-colors rounded-sm md:rounded-none border border-white/10 md:border-0 md:border-r md:border-white/10 last:md:border-r-0 ${
             sortBy === option.value
               ? 'bg-white/10 text-white'
               : 'bg-transparent text-slate-500 hover:text-slate-300 hover:bg-white/5'
